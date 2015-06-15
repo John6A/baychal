@@ -86,12 +86,12 @@
                                     <field name="OP">LT</field>
                                     <value name="A">
                                       <block type="sensor_object" id="478">
-                                        <field name="OBJECT">RIGHTSIDE</field>
+                                        <field name="OBJECT">RIGHTFRONT</field>
                                       </block>
                                     </value>
                                     <value name="B">
                                       <block type="math_number" id="554">
-                                        <field name="NUM">50</field>
+                                        <field name="NUM">100</field>
                                       </block>
                                     </value>
                                   </block>
@@ -124,7 +124,7 @@
                                 </statement>
                                 <value name="IF1">
                                   <block type="logic_compare" id="585" inline="true">
-                                    <field name="OP">GT</field>
+                                    <field name="OP">LT</field>
                                     <value name="A">
                                       <block type="sensor_object" id="612">
                                         <field name="OBJECT">RIGHTSIDE</field>
@@ -132,13 +132,41 @@
                                     </value>
                                     <value name="B">
                                       <block type="math_number" id="619">
-                                        <field name="NUM">90</field>
+                                        <field name="NUM">50</field>
                                       </block>
                                     </value>
                                   </block>
                                 </value>
                                 <statement name="DO1">
-                                  <block type="movement_right" id="629"></block>
+                                  <block type="movement_left" id="746">
+                                    <next>
+                                      <block type="robot_delay" id="757" inline="true">
+                                        <value name="DELAY">
+                                          <block type="math_number" id="770">
+                                            <field name="NUM">100</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </statement>
+                                <value name="IF2">
+                                  <block type="logic_compare" id="777" inline="true">
+                                    <field name="OP">GT</field>
+                                    <value name="A">
+                                      <block type="sensor_object" id="806">
+                                        <field name="OBJECT">RIGHTSIDE</field>
+                                      </block>
+                                    </value>
+                                    <value name="B">
+                                      <block type="math_number" id="813">
+                                        <field name="NUM">90</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <statement name="DO2">
+                                  <block type="movement_right" id="823"></block>
                                 </statement>
                                 <statement name="ELSE">
                                   <block type="movement_forward" id="639">
